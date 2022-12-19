@@ -25,9 +25,21 @@ let data = {};  /* Quaisquer dados que recebemos em um campo de entrada vamos ar
 let acceptData = () => {
     data["text"] = input.value;
     console.log(data);
+
+    createPost();       /* Add esta function após ter criado a variavel createPost */
 };
 
-
-// let createPost = () => {
-//     posts.innerHTML += ``;
-// };
+ /*Literais de modelos usam acento graves (``) para definir uma string*/
+ /* ${...} É uma substituição automática de váriaveis por valores reais. */
+let createPost = () => {           
+    posts.innerHTML += `        
+    <div>
+        <p>${data.text}</p>
+        <span class="options">
+            <i onClick="editPost(this)" class="fas fa-edit"></i>
+            <i onClick="deletePost(this)" class="fas fa-trash-alt"></i>
+        </span>
+    </div>
+    `;
+    input.value = "";
+};
