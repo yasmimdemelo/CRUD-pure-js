@@ -17,8 +17,17 @@ let formValidation = () => {
     } else {
         console.log("success");
         msg.innerHTML = "";
+        acceptData();  /* Add aqui depois que criar o object data */
     }
 };
 
-let data = {};
-let acceptData = () => {};
+let data = {};  /* Quaisquer dados que recebemos em um campo de entrada vamos armazenar em um objeto */
+let acceptData = () => {
+    data["text"] = input.value;
+    console.log(data);
+};
+
+
+// let createPost = () => {
+//     posts.innerHTML += ``;
+// };
