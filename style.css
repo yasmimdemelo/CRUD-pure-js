@@ -8,7 +8,7 @@ body {
     gap: 50px; /*vão entre eles*/
 }
 
-#tasks {
+#posts {
     width: 400px;
 }
 
@@ -16,7 +16,7 @@ i {
     cursor: pointer; /* um ponteiro que indica um link*/
 }
 
-#tasks div {
+#posts div {
     display: flex;
     align-items: center;
     justify-content: space-between;
