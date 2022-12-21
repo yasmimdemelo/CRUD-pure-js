@@ -11,7 +11,7 @@ form.addEventListener("submit", (e) => {   /* (e) representa o elemento que foi 
 });
 
 let formValidation = () => {
-    if (input.value === "") {
+    if (input.value === "") {     /*O operador de igualdade estrita (===) verifica se seus dois operandos são iguais, retornando um resultado booleano */
         msg.innerHTML = "Task cannot be blank"; 
         console.log("failure");
     } else {
@@ -29,8 +29,8 @@ let acceptData = () => {
     createPost();       /* Add esta function após ter criado a variavel createPost */
 };
 
- /*Literais de modelos usam acento graves (``) para definir uma string*/
- /* ${...} É uma substituição automática de váriaveis por valores reais. */
+/*Literais de modelos usam acento graves (``) para definir uma string
+${...} É uma substituição automática de váriaveis por valores reais.*/
 let createPost = () => {           
     posts.innerHTML += `        
     <div>
@@ -42,4 +42,15 @@ let createPost = () => {
     </div>
     `;
     input.value = "";
+};
+
+//função delete
+let deletePost = (e) => {
+    e.parentElement.parentElement.remove();
+};
+
+//function edit
+let editPost = (e) => {
+    input.value = e.parentElement.previousElementSibling.innerHTML;  /* previousElementSibling =  propriedade somente leitura retorna o Element imediatamente anterior ao especificado na lista de filhos de seu pai  */
+    e.parentElement.parentElement.remove();
 };
